@@ -64,7 +64,7 @@ Column(
         Image(
             painter = painterResource(R.drawable.dot),
             contentDescription = "dot",
-            modifier = Modifier.size(30.dp)
+            modifier = Modifier.size(40.dp)
         )
 
         Spacer(modifier = Modifier.width(200.dp))
