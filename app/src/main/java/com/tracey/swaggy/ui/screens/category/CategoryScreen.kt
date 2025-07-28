@@ -194,7 +194,7 @@ fun CategoryScreen(navController: NavController){
             text = "More categories coming soon... ",
             fontSize = 15.sp,
             textAlign = TextAlign.Center,
-            modifier = Modifier.padding(start = 100.dp, end = 80.dp),
+            modifier = Modifier.align(alignment = Alignment.CenterHorizontally)
 
         )
 
