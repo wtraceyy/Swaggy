@@ -10,6 +10,8 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Menu
 import androidx.compose.material.icons.filled.Notifications
@@ -44,6 +46,8 @@ import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import com.tracey.swaggy.R
 import com.tracey.swaggy.ui.theme.Newyellow
 import com.tracey.swaggy.ui.theme.Purplee
@@ -51,7 +55,7 @@ import com.tracey.swaggy.ui.theme.Teal
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun ItemScreen(){
+fun ItemScreen(navController: NavController){
 
     Column(
         modifier = Modifier.fillMaxSize(),
@@ -134,81 +138,163 @@ fun ItemScreen(){
         )
         Spacer(modifier = Modifier.height(10.dp))
 
-        // beginning of row
-        Row(
-            modifier = Modifier.padding(start = 20.dp)
-        ) {
-            Image(painter = painterResource(R.drawable.shoes),
-                 contentDescription = "shoe",
-                 modifier = Modifier.size(width = 150.dp, height = 180.dp)
-                )
+       Column(
+          modifier = Modifier.verticalScroll(rememberScrollState())
+       ) {
+           // beginning of row
+           Row(
+               modifier = Modifier.padding(start = 20.dp)
+           ) {
+               Image(painter = painterResource(R.drawable.shoes),
+                   contentDescription = "shoe",
+                   modifier = Modifier.size(width = 150.dp, height = 180.dp)
+               )
 
-        Spacer(modifier = Modifier.width(10.dp))
+               Spacer(modifier = Modifier.width(10.dp))
 
-        Column() {
-            Text(
-                text = "Stylish converse shoe",
-                fontSize = 20.sp,
-                fontWeight = FontWeight.Bold,
-            )
+               Column() {
+                   Text(
+                       text = "Stylish converse shoe",
+                       fontSize = 20.sp,
+                       fontWeight = FontWeight.Bold,
+                   )
 
-            Spacer(modifier = Modifier.height(10.dp))
+                   Spacer(modifier = Modifier.height(10.dp))
 
-            Text(
-                text = "Brand : Tommy Hillfigure",
-                fontSize = 15.sp,
-            )
+                   Text(
+                       text = "Brand : Tommy Hillfigure",
+                       fontSize = 15.sp,
+                   )
 
-            Spacer(modifier = Modifier.height(10.dp))
+                   Spacer(modifier = Modifier.height(10.dp))
 
-            Text(
-                text = "Price : ksh.2000 ",
-                fontSize = 15.sp,
-                textDecoration = TextDecoration.LineThrough,
-                )
-            
-            Spacer(modifier = Modifier.height(10.dp))
+                   Text(
+                       text = "Price : ksh.2000 ",
+                       fontSize = 15.sp,
+                       textDecoration = TextDecoration.LineThrough,
+                   )
 
-            Text(
-                text = "Now : ksh.1800 ",
-                fontSize = 15.sp,
-            )
+                   Spacer(modifier = Modifier.height(10.dp))
 
-            Spacer(modifier = Modifier.height(10.dp))
+                   Text(
+                       text = "Now : ksh.1800 ",
+                       fontSize = 15.sp,
+                   )
 
-            Text(
-                text = "Material: Cotton ",
-                fontSize = 15.sp,
-            )
+                   Spacer(modifier = Modifier.height(10.dp))
 
-            Spacer(modifier = Modifier.height(10.dp))
+                   Text(
+                       text = "Material: Cotton ",
+                       fontSize = 15.sp,
+                   )
 
-        Row() {
-            Icon( imageVector = Icons.Default.Star, contentDescription = "star", tint = Newyellow,)
-            Icon( imageVector = Icons.Default.Star, contentDescription = "star", tint = Newyellow,)
-            Icon( imageVector = Icons.Default.Star, contentDescription = "star", tint = Newyellow,)
-            Icon( imageVector = Icons.Default.Star, contentDescription = "star", tint = Newyellow,)
-            Icon( imageVector = Icons.Default.Star, contentDescription = "star", tint = Color.Gray,)
+                   Spacer(modifier = Modifier.height(10.dp))
 
-        }
-        Button(
-            onClick ={},
-            colors = ButtonDefaults.buttonColors(Teal),
-            shape = RectangleShape
+                   Row() {
+                       Icon( imageVector = Icons.Default.Star, contentDescription = "star", tint = Newyellow,)
+                       Icon( imageVector = Icons.Default.Star, contentDescription = "star", tint = Newyellow,)
+                       Icon( imageVector = Icons.Default.Star, contentDescription = "star", tint = Newyellow,)
+                       Icon( imageVector = Icons.Default.Star, contentDescription = "star", tint = Newyellow,)
+                       Icon( imageVector = Icons.Default.Star, contentDescription = "star", tint = Color.Gray,)
 
-
-
-        ) {
-            Text(text = "Buy Now")
-        }
-
-        }
+                   }
+                   Button(
+                       onClick ={},
+                       colors = ButtonDefaults.buttonColors(Teal),
+                       shape = RectangleShape
 
 
 
-        }
-        // end of row
+                   ) {
+                       Text(text = "Buy Now")
+                   }
 
+               }
+
+
+
+           }
+           // end of row
+
+           Spacer(modifier = Modifier.height(20.dp))
+
+
+           Row(
+               modifier = Modifier.padding(start = 20.dp)
+           ) {
+               Image(
+                   painter = painterResource(R.drawable.shoes),
+                   contentDescription = "shoe",
+                   modifier = Modifier.size(width = 150.dp, height = 180.dp)
+               )
+
+               Spacer(modifier = Modifier.width(10.dp))
+
+               Column() {
+                   Text(
+                       text = "Stylish converse shoe",
+                       fontSize = 20.sp,
+                       fontWeight = FontWeight.Bold,
+                   )
+
+                   Spacer(modifier = Modifier.height(10.dp))
+
+                   Text(
+                       text = "Brand : Tommy Hillfigure",
+                       fontSize = 15.sp,
+                   )
+
+                   Spacer(modifier = Modifier.height(10.dp))
+
+                   Text(
+                       text = "Price : ksh.2000 ",
+                       fontSize = 15.sp,
+                       textDecoration = TextDecoration.LineThrough,
+                   )
+
+                   Spacer(modifier = Modifier.height(10.dp))
+
+                   Text(
+                       text = "Now : ksh.1800 ",
+                       fontSize = 15.sp,
+                   )
+
+                   Spacer(modifier = Modifier.height(10.dp))
+
+                   Text(
+                       text = "Material: Cotton ",
+                       fontSize = 15.sp,
+                   )
+
+                   Spacer(modifier = Modifier.height(10.dp))
+
+                   Row() {
+                       Icon( imageVector = Icons.Default.Star, contentDescription = "star", tint = Newyellow,)
+                       Icon( imageVector = Icons.Default.Star, contentDescription = "star", tint = Newyellow,)
+                       Icon( imageVector = Icons.Default.Star, contentDescription = "star", tint = Newyellow,)
+                       Icon( imageVector = Icons.Default.Star, contentDescription = "star", tint = Newyellow,)
+                       Icon( imageVector = Icons.Default.Star, contentDescription = "star", tint = Color.Gray,)
+
+                   }
+                   Button(
+                       onClick ={},
+                       colors = ButtonDefaults.buttonColors(Teal),
+                       shape = RectangleShape
+
+
+
+                   ) {
+                       Text(text = "Buy Now")
+                   }
+
+               }
+
+
+
+           }
+           // end of row
+
+       }
 
 
 
@@ -222,5 +308,5 @@ fun ItemScreen(){
 @Preview(showBackground = true)
 @Composable
 fun ItemScreenPreview() {
-    ItemScreen()
+    ItemScreen(rememberNavController())
 }
