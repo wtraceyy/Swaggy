@@ -13,6 +13,7 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.ArrowForward
 import androidx.compose.material.icons.filled.Menu
 import androidx.compose.material.icons.filled.Notifications
 import androidx.compose.material.icons.filled.Search
@@ -48,6 +49,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
+import com.navigation.ROUT_CATEGORY
 import com.tracey.swaggy.R
 import com.tracey.swaggy.ui.theme.Newyellow
 import com.tracey.swaggy.ui.theme.Purplee
@@ -91,10 +93,12 @@ fun ItemScreen(navController: NavController){
                         contentDescription = "notification"
                     )
                 }
-                IconButton(onClick = {}) {
+                IconButton(onClick = {
+                    navController.navigate(ROUT_CATEGORY)
+                }) {
                     Icon(
-                        imageVector = Icons.Default.Star,
-                        contentDescription = "star"
+                        imageVector = Icons.Default.ArrowForward,
+                        contentDescription = "arrow"
                     )
                 }
             }

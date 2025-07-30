@@ -9,8 +9,10 @@ import androidx.navigation.compose.rememberNavController
 import com.tracey.swaggy.ui.screens.about.AboutScreen
 import com.tracey.swaggy.ui.screens.category.CategoryScreen
 import com.tracey.swaggy.ui.screens.contact.ContactScreen
+import com.tracey.swaggy.ui.screens.detail.DetailScreen
 import com.tracey.swaggy.ui.screens.home.HomeScreen
 import com.tracey.swaggy.ui.screens.item.ItemScreen
+import com.tracey.swaggy.ui.screens.scaffold.ScaffoldScreen
 import com.tracey.swaggy.ui.screens.splash.SplashScreen
 
 @Composable
@@ -42,6 +44,12 @@ fun AppNavHost(
         }
         composable(ROUT_SPLASH) {
             SplashScreen(navController)
+        }
+        composable(ROUT_SCAFFOLD) {
+            ScaffoldScreen(navController)
+        }
+        composable(ROUT_DETAIL) {
+            DetailScreen(navController)
         }
 
 
