@@ -11,6 +11,7 @@ import com.tracey.swaggy.ui.screens.category.CategoryScreen
 import com.tracey.swaggy.ui.screens.contact.ContactScreen
 import com.tracey.swaggy.ui.screens.detail.DetailScreen
 import com.tracey.swaggy.ui.screens.home.HomeScreen
+import com.tracey.swaggy.ui.screens.intent.IntentScreen
 import com.tracey.swaggy.ui.screens.item.ItemScreen
 import com.tracey.swaggy.ui.screens.scaffold.ScaffoldScreen
 import com.tracey.swaggy.ui.screens.splash.SplashScreen
@@ -50,6 +51,9 @@ fun AppNavHost(
         }
         composable(ROUT_DETAIL) {
             DetailScreen(navController)
+        }
+        composable(ROUT_INTENT) {
+            IntentScreen(navController)
         }
 
 

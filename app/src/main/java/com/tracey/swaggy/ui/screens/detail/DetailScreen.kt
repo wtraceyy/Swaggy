@@ -55,6 +55,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
+import com.navigation.ROUT_INTENT
 import com.navigation.ROUT_ITEM
 import com.tracey.swaggy.R
 import com.tracey.swaggy.ui.theme.Newyellow
@@ -143,7 +144,9 @@ fun DetailScreen(navController: NavController){
         //FloatingActionButton
         floatingActionButton = {
             FloatingActionButton(
-                onClick = { /* Add action */ },
+                onClick = { /* Add action */
+                navController.navigate(ROUT_INTENT)
+                },
                 containerColor = androidx.compose.ui.graphics.Color.LightGray
             ) {
                 Icon(Icons.Default.Add, contentDescription = "Add")
