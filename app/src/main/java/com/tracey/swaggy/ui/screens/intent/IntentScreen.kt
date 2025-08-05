@@ -43,7 +43,9 @@ import androidx.compose.ui.unit.sp
 import androidx.core.net.toUri
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
+import com.navigation.ROUT_DASHBOARD
 import com.navigation.ROUT_DETAIL
+import com.navigation.ROUT_INTENT
 import com.navigation.ROUT_ITEM
 import com.tracey.swaggy.R
 import com.tracey.swaggy.ui.theme.Teal
@@ -112,7 +114,7 @@ fun IntentScreen(navController: NavController){
         //FloatingActionButton
         floatingActionButton = {
             FloatingActionButton(
-                onClick = { /* Add action */ },
+                onClick = {navController.navigate (ROUT_DASHBOARD)},
                 containerColor = androidx.compose.ui.graphics.Color.LightGray
             ) {
                 Icon(Icons.Default.Add, contentDescription = "Add")
